@@ -106,6 +106,11 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerAspectRatio) {
     self.transitioningDelegate = self;
     
     self.view.backgroundColor = self.cropView.backgroundColor;
+
+    if(!CGSizeEqualToSize(self.forceAspectRatio, CGSizeZero)) {
+        [self.cropView setAspectLockEnabledWithAspectRatio:self.forceAspectRatio animated:NO];
+        self.toolbar.clampButtonTapped = nil;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

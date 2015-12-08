@@ -69,6 +69,11 @@
 @property (nonatomic, weak) id<TOCropViewControllerDelegate> delegate;
 
 /**
+ If set, will force crop to a specific aspect ratio.
+ */
+@property (assign, nonatomic) CGSize forceAspectRatio;
+
+/**
  If true, when the user hits 'Done', a UIActivityController will appear before the view controller ends
  */
 @property (nonatomic, assign) BOOL showActivitySheetOnDone;
